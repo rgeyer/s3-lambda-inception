@@ -2,13 +2,15 @@ language: python
 python: 3.6
 
 script:
-  - zip -r s3-lambda-inception.zip .
+  - ./deploy.sh
 
 deploy:
   provider: releases
   api_key:
     secure: cgpM93bE13QR5RXuVYkcMql5I97d0Mc+zoPdS1MR0YWJIabDg7BjlqPyvMAUKvhOlb9CTnnw1N5lY7oSWgaQlB3z78lJMIVf17HyaXN0cBo8yEAadqoDoDafyS7nhUq4qzaYTfx7OMrHuSKHK1s3TzHO+Q1wQqsK94q2ro3qzGWZABNPcmvD/R8eKyo47DRMUeUgjKO9W7sgDLWMaGS67bVouCQsRwLhKXY7BlTUTiQNJeXxtwLoCL0kSgn/f8bRz1cI7OyGDSqoW8n0MFLheFLc2GUHEo2zWF9ah0/xxKLMj9rY5OLqrz7BmuTxl7rnjZkQo6zWTIhLjyG8liWxQaFqQiiNcgsdC3yTfh1N9sarnzeZj/+JDjye6oS37GGL2VBOyjED58qb0hn5JEyBGb8q/HJLv6AJCrHHDaaDgNu7bhLO6dlaFbGN135oWyOHXNECaWdbag/1o5Fl3ee/zbrmc1qXwbxBEAleTuTs53F7A3RVancrjkfKkyBhxYWDn9SbhHQZY/D9HVxhNAGrxR0JO92qgSwKMudveHONzADhZPqPW5NW6XVFZivjfEKAkFtgE2S2m6yTquPysZLMZc62D8mQSXRoCpA9XZAJeNKBCSj5hcGq9EtysqPMZiCoXm5AVaQzhJvMsEzpm3c9r01JHhP+m0HaLYP7/4Ho+7A=
-  file: s3-lambda-inception.zip
+  file:
+    - s3-lambda-inception.zip
+    - package.cat.rb
   skip_cleanup: true
   on:
     tags: true
