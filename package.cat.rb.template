@@ -67,7 +67,7 @@ resource "s3_lambda_inception_function", type: "rs_aws_lambda.function" do
   handler "s3-lambda-inception.handler"
   role ""
   code do {
-    "ZipFile": @@BASE64_ZIP_STRING
+    "ZipFile": "@@BASE64_ZIP_STRING"
   } end
 end
 
