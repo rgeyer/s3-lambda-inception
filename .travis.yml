@@ -2,6 +2,7 @@ language: python
 python: 3.6
 
 script:
+  - chmod +x ./deploy.sh
   - ./deploy.sh
 
 deploy:
